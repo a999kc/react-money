@@ -1,24 +1,34 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.css'; 
+
+import { useSelector, useDispatch } from 'react-redux';
+import ExpenseList from './components/ExpenseList/ExpenseList';
+import ExpenseChart from './components/ExpenseChart/ExpenseChart';
+import { addExpense } from './redux/expensesReducer';
+import Header from './components/Header/Header'
+import React,{useState} from 'react'
+import './styles.css'; 
 
 function App() {
+  
+  const dispatch = useDispatch();
+
+  const handleAddExpense = (expense, category) => {
+    dispatch(addExpense(expense, category));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header addExpense={handleAddExpense} />
+      <div className="container">
+        <main className="main-container">
+            <div className="expenses-container">
+              <ExpenseList />
+              <ExpenseChart />
+            </div>
+        </main>
+      </div>
+    </>
   );
 }
 

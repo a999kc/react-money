@@ -1,0 +1,103 @@
+.container {
+  max-width:1280px;
+  margin:0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #636af4;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0 0 16px 16px;
+}
+  
+.header-left .logo img {
+  height: 40px;
+}
+
+.header-left-input {
+  width: 300px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 16px;
+}
+
+
+.header-left-input:focus {
+  outline: none;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-input {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.login-btn, .register-btn {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.user-avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: none;
+  flex-direction: column;
+}
+
+.user-menu:hover .dropdown {
+  display: flex;
+}
+
+.dropdown a, .dropdown button {
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown a:hover, .dropdown button:hover {
+  background-color: #f0f0f0;
+}
